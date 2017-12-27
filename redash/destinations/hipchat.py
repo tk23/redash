@@ -43,7 +43,8 @@ class HipChat(BaseDestination):
 
             data = {
                 'message': message,
-                'color': colors.get(new_state, 'green')
+                'color': colors.get(new_state, 'green'),
+                'notify': 'true'
             }
             headers = {'Content-Type': 'application/json'}
             response = requests.post(options['url'], data=json.dumps(data), headers=headers)
